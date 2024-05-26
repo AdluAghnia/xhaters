@@ -3,11 +3,18 @@ package main
 import (
 	"log"
 
+	"github.com/AdluAghnia/xhater/db"
 	"github.com/AdluAghnia/xhater/routes"
+	"github.com/AdluAghnia/xhater/session"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/template/html/v2"
 )
+
+func init() {
+	session.InitSessionStore()
+	db.GetConnection()
+}
 
 func main() {
 

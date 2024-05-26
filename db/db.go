@@ -12,21 +12,22 @@ var Db *sql.DB
 
 func GetConnection() {
 	cfg := mysql.Config{
-		User:   os.Getenv("DBUSER"),
-		Passwd: os.Getenv("DBPASS"),
-		Net:    "tcp",
-		Addr:   "127.0.0.1:3306",
-		DBName: "xhater",
+		User:                 os.Getenv("DBUSER"),
+		Passwd:               os.Getenv("DBPASS"),
+		Net:                  "tcp",
+		Addr:                 "127.0.0.1:3306",
+		DBName:               "xhaters",
+		AllowNativePasswords: true,
 	}
 
 	var err error
-	db, err := sql.Open("mysql", cfg.FormatDSN())
+	Db, err = sql.Open("mysql", cfg.FormatDSN())
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	pingErr := db.Ping()
+	pingErr := Db.Ping()
 	if pingErr != nil {
 		log.Fatal(pingErr)
 	}

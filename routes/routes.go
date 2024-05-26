@@ -13,7 +13,7 @@ func SetupRoutes(app *fiber.App) {
 	app.Get("/info", handler.Myinformationhandler)
 
 	// Login/Register & Session
-	app.Get("/api/login", handler.HandlerLogin)
-	app.Get("/api/register", handler.HandlerRegister)
-	app.Get("/api/logout", handler.HandlerLogout)
+	app.Post("/api/login", handler.HandlerLogin)
+	app.Post("/api/register", handler.HandlerRegister)
+	app.Post("/api/logout", handler.HandlerLogout)
 }
