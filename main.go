@@ -16,6 +16,7 @@ func main() {
 	app := fiber.New(fiber.Config{
 		Views: engine,
 	})
+
 	app.Use(logger.New())
 
 	routes.SetupRoutes(app)
