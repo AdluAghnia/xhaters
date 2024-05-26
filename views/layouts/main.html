@@ -12,11 +12,13 @@
 
     <title>{{ .Page }}</title>
   </head>
-  <body>
+  <body class="bg-[#1D232A] text-[#A6ABDA] h-screen">
       {{ template "partials/navbar" .}}
     <p>Asslamualaikum Gamers</p>
-    <main class="dlex flex-col gap-12 justify-center items-center">
+    <main class="flex flex-col gap-12 justify-center items-center">
       {{ embed }}
+
+      {{ template "partials/flashmessage" .}}
     </main>
     <script src="https://cdn.tailwindcss.com"></script>
   </body>
